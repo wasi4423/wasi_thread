@@ -22,12 +22,12 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Wasi_Thread implements Runnable {
 
-    static AtomicLong safeStatic = new AtomicLong(0);  // Experiment A
-    static long unsafeStatic = 0;                      // Experiment B
+    static AtomicLong safeStatic = new AtomicLong(0);  
+    static long unsafeStatic = 0;                      
     static boolean threadSafe;
     static long increments;
 
-    long instanceCount = 0;                            // non-static counter
+    long instanceCount = 0;                            
 
     public void run() {
         for (long i = 0; i < increments; i++) {
